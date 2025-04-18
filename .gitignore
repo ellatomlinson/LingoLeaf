@@ -1,0 +1,39 @@
+# Electron
+*.asar
+*.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+.Python
+env/
+venv/
+ENV/
+venv.bak/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Environment files
+.env
+.env.*
+
+# Byte-compiled
+*.pyc
+*.pyo
+
+# Others
+*.swp
+*.swo
+.cache/
+
+# GitHub LFS or backup files
+*.lfs
+*.orig
