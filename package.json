@@ -1,0 +1,27 @@
+{
+  "name": "language-coach",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^29.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ellatomlinson/Language-Coach"
+  },
+  "keywords": [],
+  "author": "Ella Tomlinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ellatomlinson/Language-Coach/issues"
+  },
+  "homepage": "https://github.com/ellatomlinson/Language-Coach#readme",
+  "dependencies": {
+    "electron": "^35.1.5"
+  }
+}

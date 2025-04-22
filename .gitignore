@@ -1,6 +1,15 @@
 # Electron
 *.asar
 *.bak
+/dist/
+/build/
+*.asar
+
+# Node modules
+node_modules/
+
+# Logs
+*.log
 
 # Python
 __pycache__/
@@ -17,6 +26,7 @@ venv.bak/
 
 # macOS
 .DS_Store
+Thumbs.db
 
 # VSCode
 .vscode/
@@ -37,3 +47,7 @@ venv.bak/
 # GitHub LFS or backup files
 *.lfs
 *.orig
+
+# IDE settings
+.vscode/
+.idea/
