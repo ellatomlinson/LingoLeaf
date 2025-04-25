@@ -1,5 +1,6 @@
 const { contextBridge, ipcRenderer } = require('electron');
 
 contextBridge.exposeInMainWorld('api', {
-  getRandomPhrase: () => ipcRenderer.invoke('get-random-phrase')
+  getRandomPhrase: () => ipcRenderer.invoke('get-random-phrase'),
+  speakText: (text) => ipcRenderer.invoke('speak-text', text),
 });

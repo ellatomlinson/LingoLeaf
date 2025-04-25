@@ -45,5 +45,11 @@
       const phrase = await window.api.getRandomPhrase();
       document.getElementById('prac-phrase').value = phrase;
     });
+    document.getElementById('play-button').addEventListener('click', () => {
+      const phrase = document.getElementById('prac-phrase').value;
+      if (phrase) {
+        window.api.speakText(phrase);
+      }
+    });
   </script>
 </html>

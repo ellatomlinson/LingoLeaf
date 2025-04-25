@@ -1,6 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
+const say = require('say');
 
 // Create the window
 function createWindow() {
@@ -28,6 +29,17 @@ ipcMain.handle('get-random-phrase', async () => {
     py.stdout.on('data', data => result += data.toString());
     py.stderr.on('data', err => console.error(err.toString()));
     py.on('close', () => resolve(result.trim()));
+  });
+});
+
+// Set up IPC to handle text-to-speech
+ipcMain.handle('speak-text', (event, text) => {
+  say.speak(text, null, 1.0, (err) => {
+    if (err) {
+      console.error('Text-to-speech error:', err);
+    } else {
+      console.log('Speech finished');
+    }
   });
 });
 
