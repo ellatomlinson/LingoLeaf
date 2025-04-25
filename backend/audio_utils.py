@@ -17,3 +17,8 @@ def transcribe_audio(filename="output.wav"):
     result = model.transcribe(filename)
     print(f"📝 You said: \"{result['text']}\"\n")
     return result["text"]
+
+def text_to_speech(text):
+    # Placeholder function for text-to-speech conversion
+    # pyt2s
+    pass

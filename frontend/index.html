@@ -22,14 +22,28 @@
     <div class="page-content">
         <div class="input-field">
           <div class="input-group">
-            <textarea id="input-folder" class="input" type="text" placeholder="Enter your practice phrase, or press 'random' to have one generated"></textarea>
+            <div class="circle-stack">
+              <button class="play-button" id="play-button">
+                <i class="fa fa-play"></i>
+              </button>
+              <div class="score-circle" id="score">100%</div>
+            </div>
+            <textarea id="prac-phrase" class="input" type="text" placeholder="Enter your practice phrase, or press 'random' to have one generated"></textarea>
           </div>
+        </div>
+        <div class="random-button-container">
+          <button class="random-button">Random</button>
         </div>
         <button class="record-button">
           <i class="fa fa-microphone"></i>
         </button>
     </div>
-
-
   </body>
+
+  <script>
+    document.querySelector('.random-button').addEventListener('click', async () => {
+      const phrase = await window.api.getRandomPhrase();
+      document.getElementById('prac-phrase').value = phrase;
+    });
+  </script>
 </html>
