@@ -41,6 +41,8 @@
   </body>
 
   <script>
+    let isRecording = false;
+    const recordButton = document.querySelector('.record-button');
     document.querySelector('.random-button').addEventListener('click', async () => {
       const phrase = await window.api.getRandomPhrase();
       document.getElementById('prac-phrase').value = phrase;
@@ -49,6 +51,19 @@
       const phrase = document.getElementById('prac-phrase').value;
       if (phrase) {
         window.api.speakText(phrase);
+      }
+    });
+    recordButton.addEventListener('click', async () => {
+      if (!isRecording) {
+        isRecording = true;
+        recordButton.classList.add('recording');
+        await window.api.startRecording();
+      } else {
+        isRecording = false;
+        recordButton.classList.remove('recording');
+        const target = document.getElementById('prac-phrase').value;
+        const result = await window.api.stopAndProcessRecording(target);
+        console.log(result);
       }
     });
   </script>
