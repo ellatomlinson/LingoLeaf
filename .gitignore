@@ -43,6 +43,7 @@ Thumbs.db
 *.swp
 *.swo
 .cache/
+output.wav
 
 # GitHub LFS or backup files
 *.lfs
