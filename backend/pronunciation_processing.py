@@ -4,13 +4,6 @@ from flask import json
 from g2p_en import G2p
 from text_utils import extract_letters
 
-# def text_to_phonemes(text):
-#     g2p = G2p()
-#     phonemes = g2p(text)
-#     phoneme_str = " ".join([p for p in phonemes if p != ' '])
-#     return phoneme_str
-
-
 # Calculate the similarity ratio between two pronunciations overall
 def compare_pronunciation(target, spoken):
     matcher = SequenceMatcher(None, target, spoken) 
