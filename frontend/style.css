@@ -9,6 +9,11 @@ body {
   width: 100vw;
 }
 
+*:focus {
+  outline: 2px solid #f3e3cb;
+  border-radius: 4px; 
+}
+
 /* Placement of the background leaves */
 .leaves1 {
   position: absolute;
