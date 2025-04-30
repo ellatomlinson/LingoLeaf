@@ -105,6 +105,7 @@
           tooltipSpan.className = 'tooltiptext'
           tooltipSpan.textContent = `${Math.round(wordScores[index] * 100)}%`
 
+          // Change word colour according to score
           if (wordScores[index] > 0.8) {
             wordSpan.style.color = '#40535C'
           } else if (wordScores[index] > 0.6) {

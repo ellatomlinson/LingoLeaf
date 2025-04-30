@@ -92,6 +92,9 @@ body {
   height: 40%;
 }
 
+/* 
+Contains the practice phrase, and the output feedback
+*/
 .texts_container {
   padding-left: 0.75rem;
   width: 90%;
