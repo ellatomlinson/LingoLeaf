@@ -37,8 +37,6 @@ ipcMain.handle('speak-text', (event, text) => {
   say.speak(text, null, 1.0, (err) => {
     if (err) {
       console.error('Text-to-speech error:', err)
-    } else {
-      console.log('Speech finished')
     }
   })
 })

@@ -10,7 +10,6 @@ fs = 44100
 @app.route('/start', methods=['POST'])
 def start():
     global stream, buffer
-    print("Starting recording... farts")
     start_recording()
     return jsonify({"status": "recording started"})
 
