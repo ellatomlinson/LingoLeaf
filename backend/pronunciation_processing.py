@@ -1,7 +1,6 @@
 from difflib import SequenceMatcher
 import sys
 from flask import json
-from g2p_en import G2p
 from text_utils import extract_letters
 
 # Calculate the similarity ratio between two pronunciations overall
