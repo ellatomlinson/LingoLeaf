@@ -26,9 +26,12 @@
               <button class="play-button" id="play-button">
                 <i class="fa fa-play"></i>
               </button>
-              <div class="score-circle" id="score">100%</div>
+              <div class="score-circle" id="score">-</div>
             </div>
-            <textarea id="prac-phrase" class="input" type="text" placeholder="Enter your practice phrase, or press 'random' to have one generated"></textarea>
+            <div class="container">
+              <textarea id="prac-phrase" class="input" type="text" placeholder="Enter your practice phrase, or press 'random' to have one generated"></textarea>
+              <div id="word-scores-container"></div>
+            </div>
           </div>
         </div>
         <div class="random-button-container">
@@ -64,7 +67,40 @@
         const target = document.getElementById('prac-phrase').value;
         const result = await window.api.stopAndProcessRecording(target);
         console.log(result);
+
+        const container = document.getElementById('word-scores-container');
+        container.innerHTML = '';
+
+        const wordScores = result.word_scores;
+        const spokenWords = result.spoken_words;
+
+        // Build each word with tooltip for the score
+        spokenWords.forEach((word, index) => {
+          const wordSpan = document.createElement('span');
+          wordSpan.className = 'word-tooltip';
+          wordSpan.textContent = word + ' ';
+
+          const tooltipSpan = document.createElement('span');
+          tooltipSpan.className = 'tooltiptext';
+          tooltipSpan.textContent = `${Math.round(wordScores[index] * 100)}%`;
+
+          if (wordScores[index] > 0.8) {
+            wordSpan.style.color = '#40535C';
+          } else if (wordScores[index] > 0.6) {
+            wordSpan.style.color = '#C5871B';
+          } else {
+            wordSpan.style.color = '#770404';
+          }
+
+          wordSpan.appendChild(tooltipSpan);
+          container.appendChild(wordSpan);
+        });
+
+        // Update the overall score too
+        document.getElementById('score').textContent = `${Math.round(result.overall_score * 100)}%`;
       }
     });
+
+
   </script>
 </html>
