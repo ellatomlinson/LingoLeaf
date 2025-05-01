@@ -10,8 +10,7 @@ body {
 }
 
 *:focus {
-  outline: 2px solid #f3e3cb;
-  border-radius: 4px;
+  outline: none;
 }
 
 /* Placement of the background leaves */
